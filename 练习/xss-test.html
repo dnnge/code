@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>xss测试</title>
+	</head>
+	<body>
+		<input id="text1" type="text" placeholder="请输入标签名称" />
+		<div id="wrap">
+			<span>dsadsadsadas</span>
+		</div>
+		<script type="text/javascript">
+			document.getElementById('wrap').addEventListener('click',function(){
+				this.innerHTML+='<span>'+document.getElementById('text1').value+'</span>';
+			})
+		</script>
+	</body>
+</html>

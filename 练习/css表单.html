@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+	<head></head>
+	<title>css表单</title>
+	<style type="text/css">
+		body {
+			background-image: url(img/bg.png);
+			/*background-image: -webkit-gradient(linear, 0 100%, right bottom, color-stop(0, #8fb100), color-stop(1, #8fb133));*/
+			/*left top - 起始点
+right bottom - 结束点
+color-stop(0, #8fb100) - 起始点颜色
+color-stop(1, #8fb133) - 结束点颜色 
+*/
+			margin: 0;
+			padding: 0;
+		}
+		
+		.box {
+			height: 280px;
+			width: 300px;
+			background: rgba(255, 255, 255, 0.7);
+			margin: 0 auto;
+			text-align: center;
+			position: relative;
+			top: 150px;
+			
+			border-radius: 5px;
+			
+		}
+		
+		.from_input {
+			margin-top: 20px;
+		}
+		
+		.from_input input {
+			width: 220px;
+			height: 35px;
+			border-radius: 5px;
+			border: solid 1px #e3e3e3;
+			margin-top: 10px;
+			outline-color: #CD8E57;
+		}
+		
+		.from_btn {
+			margin-top: 15px;
+		}
+		
+		.login_btn {
+			background: #4AD0AB;
+			height: 35px;
+			width: 220px;
+			color: #fff;
+			border-radius: 5px;
+			border: 0;
+			outline: #4AD0AB;
+		}
+		
+		.login_btn:active {
+			background: salmon;
+		}
+		
+		.from_input span {
+			position: relative;
+			font-size: 14px;
+			left: -80px;
+		}
+	</style>
+
+	<body>
+		<div id="login" class="box">
+			<br>
+			<label id="title" style="font-size:20px">用户登录</label>
+			<div class="from_input">
+
+				<span>账号:</span>
+				<div>
+					<input type="text" placeholder="请输入账号" />
+				</div>
+
+				<div style="margin-top:5px;">
+					<span>密码:</span>
+					<div>
+						<input type="text" placeholder="请输入密码" />
+					</div>
+				</div>
+
+				<div id="display" style="margin-top:5px;display:none;">
+					<span>确认密码:</span>
+					<div>
+						<input type="text" placeholder="确认密码" />
+					</div>
+				</div>
+
+				<div class="from_btn">
+					<button id="longin_btn" class="login_btn">登录</button>
+					<div style="font-size:14px;color:#666;margin-top:5px;">
+						<label>没有账号?</label>
+						<a id="reg" href="#">注册</a>
+					</div>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				document.getElementById("reg").addEventListener("click", function() {
+					var login = document.getElementById("login");
+					document.getElementById("title").innerHTML = "用户注册";
+					document.getElementById("longin_btn").innerHTML = "注册";
+					login.style.height=380+ "px";
+					document.getElementById("display").style.display = "block";
+				})
+
+				document.getElementById("longin_btn").addEventListener("click", function() {
+					var text = document.getElementsByClassName("box")[0].getElementsByTagName("input");
+					if(text[0].value.length < 1 || text[1].value.length < 1) {
+						text[0].style.borderColor = "red";
+						text[1].style.borderColor = "red";
+						text[2].style.borderColor = "red";
+					} else {
+						alert("登录成功");
+					}
+				})
+			</script>
+
+	</body>
+
+</html>

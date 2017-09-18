@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>手机号码归属地查询</title>
+	</head>
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				font: "微软雅黑";
+				background-image:url(img/banner.jpg);
+			}
+			label{
+				margin-left:60px;
+				font-size:22px;
+				font-style: normal;
+			}
+			.box{
+				margin:0 auto;
+				width:400px;
+				height:100px;
+				background-color:rgba(255,255,255,0.6);
+				margin-top:150px;
+				border-radius:5px;
+			}
+			#mobile{
+				width:250px;
+				height:28px;
+				margin-top:10px;
+				border-radius:5px;
+				border:solid 1px #CECECE;
+				margin-left:30px;
+			}
+			#sel{
+				width:80px;
+				height:30px;
+				background:#fff;
+				color:#fff;
+				background-color:#4169E1;
+				border-radius:5px;
+				border:0;	
+				outline-color:#F4A460;
+			}
+			.list span{
+				margin:8px 0 0 30px;
+				display:block;
+				font-size:20px;
+				font-weight: 400;
+			}
+
+		</style>
+	<body>
+		<div class="box">
+			<div style="height:10px"></div>
+			<label>手机号码归属地查询</label><br>
+			<input id="mobile" type="text"/>
+			<button id="sel">查询</button>
+			<div class="list">
+				<span id="mobile_text"></span>
+				<span id="province"></span>
+				<span id="city"></span>
+				<span id="type"></span>
+			</div>
+		</div>
+		<script src="js/jquery-3.1.1.js"></script>
+		<script type="text/javascript">
+			$("#sel").on("click",function(){
+				var mobile=$("#mobile").val();
+				if(mobile.length<11 || mobile.length>11){
+					alert("请输入正确的手机号码！");
+					return;
+				}else if(mobile.length<1){
+					alert("请输入手机号码哦！");
+					return;
+				}
+				document.getElementsByClassName("box")[0].style.height=220+"px";
+				$.ajax({
+					type:"get",
+					url:"http://sj.apidata.cn",
+					data:{mobile:mobile},
+					async:true,
+					dataType:'jsonp',
+					success:function(mobile){
+					if(mobile.data.status!=0){
+						$("#mobile_text").html("手机号码:"+mobile.data.mobile);
+						$("#province").html("省份:"+mobile.data.province);
+						$("#city").html("城市:"+mobile.data.city);
+						$("#type").html("类型:"+mobile.data.types);
+					}else{
+						alert("请求失败");
+					}
+
+						
+					}
+				});
+			})
+			
+			
+				$(document).keydown(function(event){ 			
+					if(event.keyCode==13){ 
+						$("#sel").click(); 
+					} 
+				})			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+	<title>test</title>
+</head>
+<style type="text/css">
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	.box{
+		width:100%;
+		height:100%;
+		background:rgba(0,0,0,0.5);
+		position:fixed;
+		display: none;
+		top:0;
+	}
+	button{
+		width:80px;
+		height:30px;
+		background:#FFF;
+		color: #666;
+		/*border: 0;*/
+		border:#cecece solid 1px; 
+		border-radius:4px;
+		outline:none;
+		cursor: pointer;
+		transition: all 1s;
+	}
+	button:hover{
+		border-color:#33AB9F;	}
+	.Prompt{
+		margin:0 auto;
+		width:120px;
+		height:40px;
+		background: rgba(0,0,0,0.6);
+		color:#FFF;
+		line-height:40px;
+		font-size:14px;
+		text-align:center;
+		border-radius:5px;
+		display:none;
+			}
+</style>
+<body>
+<br>
+
+	<button id="btn">弹出层</button>
+	<button id="btn2">提示框</button>
+
+<div id="dialog" class="box">
+</div>
+
+<div id="Prompt" class="Prompt">
+	玩命提示中	
+</div>
+</body>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+<script type="text/javascript">
+$("#btn").on("click",function(){
+	$("#dialog").css("display","block");
+})
+$("#dialog").on("click",function(){
+	$(this).css("display","none");
+})
+$("#btn2").on("click",function(){
+	$("#Prompt").css("display","block");	
+	var hg=$(document).height()/2-40;
+	$("#Prompt").css("margin-top",hg+"px");
+	var timer=setInterval("Prompt()",2000);
+})
+function Prompt() {
+    $("#Prompt").css("display","none");
+	    window.clearInterval(timer);	
+}
+
+</script>
+</html>

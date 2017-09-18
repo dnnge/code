@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>getAttribute和setAttribute(取得和设置属性)的使用介绍</title>
+	</head>
+	<body>
+		<ul>
+			<li id="li1" title="hello"></li>
+			<li>haha</li>
+			<li>hehehe</li>
+		</ul>
+		<button id="btn">change</button>
+		<script type="text/javascript">
+		 var ceshi = document.getElementById("li1");
+		document.getElementById("btn").addEventListener("click",function(){
+			ceshi.setAttribute("title","js设置");
+			alert(ceshi.getAttribute("title"));
+		})
+
+			
+		</script>
+	</body>
+</html>

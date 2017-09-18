@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>标签滚动</title>
+		<style type="text/css">
+			html,body{
+				overflow:hidden;
+			}
+			#test{
+				height:30px;		
+				width:150px;		
+			}
+		</style>
+	</head>
+	<body>
+		<span id="test">欢迎您访问本网页</span>
+	</body>
+	<script type="text/javascript">
+		var span=document.getElementById("test");
+		var wid=document.body.clientWidth;
+		setInterval(function(){			
+			span.style.position="absolute";	
+			var margin=span.offsetLeft+20;
+				if(margin>wid){
+					margin=-50;
+				}
+			span.style.left=margin+'px';
+		},200)		
+	</script>
+</html>

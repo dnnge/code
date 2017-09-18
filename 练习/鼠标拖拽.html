@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标拖拽效果</title>
+		<style type="text/css">
+			body{
+				overflow:hidden;
+			}
+			.img-bg{
+				background-image: url(img/baozou.jpg);
+				background-repeat:no-repeat;
+				background-size:150px;
+				position:absolute;
+				height:150px;
+				width:150px;
+				cursor:pointer;
+				border:solid 2px #EC971F;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="img_bg" class="img-bg"></div>
+		<script type="text/javascript">
+			var img_btn=document.getElementById('img_bg');
+				getstorage_coordinate();//设置默认位置
+				//监听鼠标按住
+				img_btn.addEventListener('mousedown',function(res){
+				var img_x=res.clientX;
+				var img_y=res.clientY;
+					this.style.opacity='0.3';
+					//监听鼠标移动
+					document.onmousemove=function(ret){
+						var left=ret.clientX-100;
+						var top=ret.clientY-100;
+							img_btn.style.left=(left<0)? 0:left + 'px';	
+							img_btn.style.top=(top<0) ? 0:top+'px';	
+					}
+					//监听鼠标放开
+					document.onmouseup=function(){
+						var axis_x=img_btn.style.left;
+						var axis_y=img_btn.style.top;
+							storage_coordinate(axis_x,axis_y);
+							img_btn.style.opacity='10';
+							document.onmousemove=null;
+							document.onmouseup=null;
+					}
+			})
+				
+			//存储位置坐标	
+			function storage_coordinate(axis_x,axis_y){
+				localStorage.setItem('axis_x',axis_x);
+				localStorage.setItem('axis_y',axis_y);
+			}
+			
+			//获取位置坐标，设置默认位置
+			function getstorage_coordinate(){
+				var default_left=localStorage.getItem('axis_x');
+				var default_top=localStorage.getItem('axis_y');
+				if(!!default_left || !!default_top ){
+					img_btn.style.left=default_left;
+					img_btn.style.top=default_top;
+				}
+			}
+			
+		</script>
+	</body>
+</html>

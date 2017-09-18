@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin:0;
+		}
+		body{
+			background:#EEEEEE;
+		}
+		.header{
+		height: 32px;
+		background:#333333;
+		}
+		.header-left{
+		background:cornflowerblue;
+		font-size:12px;
+		color: #fff;
+		float: left;
+		height:32px;
+		line-height: 32px;
+		width: 200px;
+		padding-left:20px;
+		}
+		.sj-left{
+        width: 0px;
+        height: 0px;
+        border-width:15px;
+        border-style: solid;
+        border-radius:5px;
+        border-color: transparent skyblue transparent transparent;
+        position: relative;
+        float:left;
+        right: 22px;
+        top:3px;
+		}
+		.left-text{
+		width:100px;
+		height:36px;
+		background-color:skyblue;
+		border-radius:8px;
+		line-height:36px;
+		}
+		.qp-left{
+		  float:left;
+		  padding-left:20px;
+		}
+		
+		.sj-right{
+	        width: 0px;
+	        height: 0px;
+	        border-width:15px;
+	        border-style: solid;
+	        border-radius:5px;
+	        border-color: transparent  transparent transparent sandybrown;
+	        position: relative;
+	        float:right;
+	        left: 21px;
+	        top:3px;
+			}	
+		  .qp-right{
+			  float:right;
+			  padding-right:20px;
+			}
+		  .right-text{
+			width:100px;
+			height:36px;
+			background-color:sandybrown;
+			border-radius:8px;
+			line-height:36px;
+			}
+		
+			.tx{
+				width:50px;
+				height:50px;
+				border-radius:50%;
+				float:right;
+			}
+	</style>
+	<body>
+		<div class="header">
+			<div class="header-left">html+css聊天气泡效果演示</div>
+		</div>
+		
+		<div style="padding:20px 20px 0 20px">
+			<img style="float:left;" src="img/qipao-tx.png" />
+			<div class="qp-left">
+			<div class="sj-left"></div>
+			<div class="left-text">hello</div>
+			</div>
+			<br /><br /><br />
+		   <img class="tx" src="img/qipao-tx2.gif"/>
+		   <div class="qp-right">
+			   <div class="sj-right"></div>
+			   <div class="right-text">hello</div>
+			</div>
+			
+	       <br /><br /><br /><br />
+	    <img class="tx" src="img/qipao-tx2.gif"/>
+		   <div class="qp-right">
+			   <div class="sj-right"></div>
+			   <div class="right-text">good boy</div>
+			</div>
+			
+			</div>	
+		
+	</body>
+</html>

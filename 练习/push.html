@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>push()</title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		var html=[];
+		 html.push('<div style="height:200px;background:red">');
+		 html.push("<ul>");
+		 html.push("<li>1</li>");
+		 html.push("<li>2</li>");
+		 html.push("<li>3</li>");
+		 html.push("</ul>");
+		 html.push('</div>');
+		 
+		document.getElementsByTagName("body")[0].innerHTML+=html.join('');
+	</script>
+</html>

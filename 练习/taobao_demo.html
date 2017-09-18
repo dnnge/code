@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style type="text/css">
+		body ul{
+			margin: 0;
+			padding:0;
+		}
+		a{
+			text-decoration:none;
+			color:#fff;
+		}
+		*{
+			font:"微软雅黑";
+			font-size:14px;
+			font-weight:300;
+		}
+		.list{
+			list-style:none;
+			float:left;
+			border: dotted 1px #666;
+		}
+		.list li{
+			height:30px;
+			width:150px;
+			padding-left:10px;
+			line-height:30px;
+			background:#FF6537;
+			border-bottom:dotted 1px #666;
+		}
+		.list li:hover{
+			background:#F94A14;
+		}
+		.main{
+			height:495px;
+        	width:800px;
+        	background:skyblue;
+        	float:left;
+        	position:absolute;
+        	top:7px;
+        	left:158px;
+        	display:none;
+        	border:2px #F94A14 solid;
+		}
+	</style>	
+	</head>
+	<body>
+		<ul class="list">
+			<li value="list-1"><a>女装/男装/内衣</a></li>
+			<li value="list-2"><a>鞋鞭/箱包/配件</a></li>
+			<li value="list-3"><a>童装玩具/孕产/用</a></li>
+			<li value="list-4"><a>家电/数码/手机</a></li>
+			<li value="list-5"><a>美妆/洗护/保健品</a></li>
+			<li value="list-6"><a>珠宝/眼镜/手表</a></li>
+			<li value="list-7"><a>运动/户外/乐器</a></li>
+			<li value="list-8"><a>游戏/动漫/影视</a></li>
+			<li value="list-9"><a>美食/生鲜/零食</a></li>
+			<li value="list-10"><a>鲜花/宠物/农资</a></li>
+			<li value="list-11"><a>房产/装修/建材</a></li>
+			<li value="list-12"><a>家具/家饰/家纺</a></li>
+			<li value="list-13"><a>汽车/二手车/用品</a></li>
+			<li value="list-14"><a>办公 /DIY/五金电子</a></li>
+			<li value="list-15"><a>百货/餐厨/家庭保</a></li>
+			<li value="list-16"><a>学习/卡券/本地服</a></li>
+		</ul>
+		<div class="main">1</div>
+		<div class="main">2</div>
+		<div class="main">3</div>
+		<div class="main">4</div>
+		<div class="main">5</div>
+		<div class="main">6</div>
+		<div class="main">7</div>
+		<div class="main">8</div>
+		<div class="main">9</div>
+		<div class="main">10</div>
+		<div class="main">11</div>
+		<div class="main">12</div>
+		<div class="main">13</div>
+		<div class="main">14</div>
+		<div class="main">15</div>
+		<div class="main">16</div>
+		
+	</body>
+	<script type="text/javascript">
+		var a=document.getElementsByTagName('a');
+		var list=document.getElementsByTagName("li");
+		var divs=document.getElementsByClassName("main");
+		var ul=document.getElementsByClassName("ul");
+		for(i=0;i<a.length;i++){
+		 a[i].href="";
+		 a[i].innerHTML+="&nbsp;>";
+		list[i].className="list-li";
+		list[i].onmousemove=function(){
+			for(i=0;i<divs.length;i++){
+				divs[i].style.display="none";
+			}
+      	   switch(this.getAttribute('value')){
+      	   	  case 'list-1':divs[0].style.display="block";break;
+      	   	  case 'list-2':divs[1].style.display="block";break;
+      	   	  case 'list-3':divs[2].style.display="block";break;
+      	   	  case 'list-4':divs[3].style.display="block";break;
+      	   	  case 'list-5':divs[4].style.display="block";break;
+      	   	  case 'list-6':divs[5].style.display="block";break;
+      	   	  case 'list-7':divs[6].style.display="block";break;
+      	   	  case 'list-8':divs[7].style.display="block";break;
+      	   	  case 'list-9':divs[8].style.display="block";break;
+      	   	  case 'list-10':divs[9].style.display="block";break;
+      	   	  case 'list-11':divs[10].style.display="block";break;
+      	   	  case 'list-12':divs[11].style.display="block";break;
+      	   	  case 'list-13':divs[12].style.display="block";break;
+      	   	  case 'list-14':divs[13].style.display="block";break;
+      	   	  case 'list-15':divs[14].style.display="block";break;
+      	   	  case 'list-16':divs[15].style.display="block";break;
+      	   }
+        }
+
+		}
+       for(k=0;k<divs.length;k++){
+       	divs[k].onmouseout=function(){
+		    this.style.display="none";
+		}
+       }
+        
+
+	</script>
+</html>

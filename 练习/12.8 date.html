@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取年月</title>
+	</head>
+	<body>
+		<div id="test"></div>
+	</body>
+	<script type="text/javascript">
+	 var date=new Date;
+	 var year=date.getFullYear(); 
+	 var month=date.getMonth()+1;
+	 month =(month<10 ? "0"+month:month); 
+	 var mydate = (year.toString()+month.toString());
+
+
+var span=document.createElement("div");
+//span.setAttribute("no","");
+//span.setAttribute("type","0");
+span.innerHTML="取消";
+document.getElementById("test").insertBefore(span);
+
+	</script>
+</html>

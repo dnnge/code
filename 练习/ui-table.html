@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格样式</title>
+		<style type="text/css">
+		  *{
+		  	font:"微软雅黑";
+		  }
+			body{
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				margin:20px 0 0 20px;
+			}
+			.line{
+				width:100%;
+			}
+			.btn{
+				height:25px;
+				width:80px;
+				background:#00BFFF;
+				border-radius: 5px;
+				color:#fff;
+				border:0;
+				outline-color:#FA8072;
+			}
+			.line_input{
+				outline-color:skyblue;
+				height:22px;
+			}
+			.table{
+				width:800px;
+		        border:solid 1px #E2E2E2;
+		        border-collapse: collapse;	
+		        margin:10px 0 0 20px;
+		        background:#fff;
+		        transition: all 0.5s;	
+			}
+			.table tr td{
+				border:1px solid #E2E2E2;
+			}
+			.table td{
+				height:30px;
+				padding-left:10px;
+			}
+			.table th{
+				padding-left:10px;
+			}
+			
+			.oue_line{
+				background:#F2F2F2;
+				height:35px;
+				font-size:14px;
+				text-align:left;
+				}
+			.oue_column{
+				width:150px;
+			}
+			.td-display{
+				border-right:black;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<input id="text" class="line_input" type="text" placeholder="输入生成表格的行数" />
+			<button id="btn" class="btn">点击生成</button>
+		</div>
+<hr class="line"></hr>
+		
+		<table class="table">
+			<tr class="oue_line">
+				<th class="oue_column">by:Mr.0</th>
+				<th>加入时间</th>
+				<th>签名</th>
+			</tr>
+			
+			<tr>
+				<td>dange</td>
+				<td>2016-12-20</td>
+				<td> 2016-20-text</td>
+			</tr>
+			
+			<tr>
+				<td>dnnge520</td>
+				<td>2016-12-19</td>
+				<td>2016-20-text</td>
+			</tr>
+			<tr>
+				<td>iceH</td>
+				<td>2016-12-18</td>
+				<td>2016-20-text</td>
+			</tr>
+		</table>
+	</body>
+	<script type="text/javascript">
+		var tr=document.getElementsByTagName("tr");
+	    var a=0;
+	    document.getElementById("btn").addEventListener("click",function(){
+	    	var text=document.getElementById("text").value;
+	    	var table=document.getElementsByClassName("table")[0];
+	    	if(text.length<1){
+	    		alert("请输入行数?");
+	    		return;
+	    	}
+	    	for(i=0;i<text;i++){
+	    		var line=document.createElement("tr");
+				line.innerHTML='<td></td><td></td><td></td>';
+		    	table.appendChild(line);
+	    	}
+	    	colors();
+	    })
+	    
+		for(i=1;i<tr.length;i++){ //#FFFACD
+			var l=0;
+			tr[i].onclick=function(){
+			 this.style.backgroundColor="#FFFACD";
+		}
+		
+function colors(){			
+	for(i=1;i<tr.length;i++){
+		if(i%2==0){
+			tr[i].style.backgroundColor="#FAFAFA";
+		}else{
+			tr[i].style.backgroundColor="#fff";
+		}
+	}				
+}
+
+		
+
+
+	</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		
+	</body>
+	
+<script type="text/javascript">
+	
+var content=[
+'<label value="" style="font-size:20px">类别</label>',
+'<input id="class_value" placeholder="类别" type="text" value=""',
+'style="-webkit-appearance:none;font-size:100%;margin-top:15px;height:25px;width:90%;border:1px solid #e3e3e3;border-radius:5px" />'].join("");
+
+//console.log(content.replace(/(value="")/,'value="123"'));
+
+var ls=content.replace(/(.*<input.*)value=".*?"(.*)/,'$1$2');
+
+var ls=content.replace(/(.*<input.*)value=".*?"(.*)/,'$1要替换的值$2');
+
+alert(content.replace(/(.*<input.*)value=".*?"(.*)/,'$1要替换的值$2'));
+//                     /（.*input.*value=").*?(".*)/,'$1aaaaa$2'
+
+alert(ls);
+
+</script>
+
+</html>

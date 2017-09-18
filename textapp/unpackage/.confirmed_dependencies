@@ -1,0 +1,14 @@
+{
+  "index.html": {
+    "resources": [
+      "css/index.css",
+      "img/bj.jpg",
+      "img/xunlei.png",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/index.js",
+      "img/tuichu.png",
+      "img/fenxiang.png"
+    ]
+  }
+}

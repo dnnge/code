@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>jquery锚点平滑效果</title>
+		<style type="text/css">
+			#box{
+				width:100%;
+				height:700px;
+				background:skyblue;
+			}
+			
+			#text{
+				width:100%;
+				height:700px;
+				background:#8B008B;
+			}
+			
+		</style>
+	</head>
+	
+	<body>		
+		
+	<a id="jump" href="#box">点击跳转</a>
+	
+	<div id="text"></div>	
+	<div id="box">1231</div>
+	
+	</body>
+		
+	<script src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript">	
+	
+		$("#jump").on("click",function(){
+			$('html,body').animate({
+				scrollTop:$($.attr(this,'href')).offset().top
+			},800);
+		return false;
+		})	
+		
+	</script>
+</html>

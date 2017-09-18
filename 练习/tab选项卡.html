@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>tab</title>
+	</head>
+	<style type="text/css">
+		button{
+			background-color: #0099CC;
+			width: 150px;
+			height: 30px;
+			border: none;
+			border-radius: 5px;
+			color: #fff;
+			outline:none;	
+		}
+		button:hover{
+			background-color:#6699CC;
+		}
+	    li{
+	    	width: 100%;
+	    	height: 1024px;
+	    	list-style: none;
+	    	display: none; 
+	    }
+	</style>
+	<body>
+		<button value="tap1">选项卡1</button>
+		<button value="tap2">选项卡2</button>
+		<button value="tap3">选项卡3</button>
+		<button value="tap4">选项卡4</button>
+		
+	<li id="tap1" value="tab1" style="background-color:#99CCFF;">
+	<h1>选项1</h1>
+	</li>
+	<li id="tap2" value="tab2" style="background-color:salmon;">
+		<h1>选项2</h1>
+	</li>
+	<li id="tap3" value="tab3" style="background-color:#FFCC33">
+		<h1>选项3</h1>
+	</li>
+	<li id="tap4" value="tab4" style="background-color:blueviolet;">
+		<h1>选项4</h1>
+	</li>
+	
+	
+
+	
+	
+
+<script type="text/javascript">
+ 
+	var btn = document.getElementsByTagName("button");
+	document.getElementById('tap1').style.display='block';
+	btn[0].style.backgroundColor='#FF6666';
+	for(i = 0; i < btn.length; i++) {
+		btn[i].onclick= function() {
+			abc(this.value);
+			this.style.backgroundColor='#FF6666';
+		}
+	}
+
+	function abc(val) {
+		var block = document.getElementsByTagName('li
+		for(i = 0; i < block.length; i++) {
+			btn[i].style.backgroundColor='#0099CC';
+			block[i].style.display = 'none';
+			if(val == block[i].id) {
+				block[i].style.display = 'block';
+			}
+		}
+	}
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+</script>
+		
+	</body>
+</html>

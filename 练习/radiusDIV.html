@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>圆div</title>
+		<style type="text/css">
+			.radius{
+		/*		background-color:rgba(138,43,226,0.2);*/
+				background-image:url(img/hy.jpg);
+				height: 100px;
+				width:100px;
+				border-radius:50%;
+				transition-duration:1s;
+				visibility: hidden;
+			}
+			.radius:hover{
+				transition-duration:1s;
+				transform:rotate(360deg);
+				height: 200px;
+				width:200px;
+			}
+          .radius2{
+				background-color:rgba(138,43,226,0.2);
+				height: 100px;
+				width:100px;
+				border-radius:50%;
+				transition-duration:1.5s;
+			}
+		   .radius2:hover{
+		   	background-color:rgba(255,255,255,0.2);
+		   	transition-duration:1.5s;
+		   }
+		   .txt{
+		   	color:deepskyblue;
+		   }
+		   .txt:hover{
+		   	text-shadow: 1px 1px 1px #00BFFF;
+		   }
+		   .input1{
+		   	width: 200px;
+		   	height: 26px;
+		   	border:none;
+		   	border-radius:5px;
+		   	background-color:#FAF7F7;	   	
+		   }
+		   .input1:hover{
+		   	box-shadow: 0px 0px 4px aqua;
+		   }
+		   .btns{
+		   	height: 180px;
+		   	height: 28px;
+		   	background-color:royalblue;
+		   	border:none;
+		   	color: #fff;
+		   	border-radius:5px;
+		   }
+		   .btns:hover{
+		   	box-shadow: 0px 0px 5px aqua;
+		   }
+		</style>
+	</head>
+	<body>
+		<div class="radius"></div>
+		<br />
+		<div class="radius2"></div>
+		
+		<div style="text-align:center;">
+		<label class="txt">css3阴影效果</label>
+		<br /><br />
+		<input class="input1"/>
+		<br /><br />
+		<button class="btns">边框阴影效果</button>
+		</div>
+	</body>
+</html>

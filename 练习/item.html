@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+	    *{
+	    	margin: 0;
+	    }
+	    a{
+	    	color: #fff;
+	    	text-decoration:none;
+	    }
+	     ul{
+	     	list-style: none;
+	     	text-align:center;
+	     }
+	     .top{
+	     	height:40px;
+	     	background-color:slategray;
+	     	line-height: 40px;
+	     }
+	     .nav-left{
+	     line-height:40px;
+	     float:left;
+	     width:100px;
+	     height:40px;
+	     background-color:slategray;
+	     position:relative;
+	     color:#fff;
+	     }
+	     .nav-item li{
+	     	width:100px;
+	     	height:40px;
+	     	background-color:slategrey;
+	     }
+          .nav-item{
+          		position:absolute;
+          		top: 100%;
+          		left: -40px;
+          		display: none;
+          }
+         .nav-item li:hover{
+	     	background-color:#FA8072;
+	     }
+          .nav-left:hover{
+            background-color:#FA8072;
+            transition:0.5s;
+          }
+	</style>
+	<body>
+		<ul class="nav">
+			<li class="nav-left"><a href="#">HOME</a>
+				<ul class="nav-item">
+					<li>列表1</li>
+					<li>列表2</li>
+					<li>列表3</li>
+				</ul>
+			</li>
+			<li class="nav-left"><a href="#">item1</a>
+				<ul class="nav-item">
+					<li>列表1</li>
+					<li>列表2</li>
+					<li>列表3</li>
+				</ul>
+			</li>
+			<li class="nav-left"><a href="#">item2</a>
+				<ul class="nav-item">
+					<li>列表1</li>
+					<li>列表2</li>
+					<li>列表3</li>
+				</ul>
+			</li> 
+			<li class="nav-left"><a href="#">item3</a>
+				<ul class="nav-item">
+					<li>列表1</li>
+					<li>列表2</li>
+					<li>列表3</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="top"></div>
+		<script type="text/javascript">
+			var btn=document.getElementsByClassName("nav-left");
+			var item=document.getElementsByClassName("nav-item");
+			for(i=0;i<btn.length;i++){
+				btn[i].onmousemove=function(){
+					for(j=0;j<item.length;j++){
+					    item[j].style.display="none";
+					}
+					this.getElementsByTagName("ul")[0].style.display="block";
+				}
+				}
+			
+		</script>
+	</body>
+</html>
+
+
+
+
+
